@@ -2,6 +2,9 @@
 Changelog for package libphidget22
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.0.1 (2019-12-05)
+------------------
+
 2.0.0 (2019-12-05)
 ------------------
 * Port libphidget22 vendor package to ament.
