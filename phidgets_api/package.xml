@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package format="2">
   <name>phidgets_api</name>
-  <version>2.0.0</version>
+  <version>2.0.1</version>
   <description>A C++ Wrapper for the Phidgets C API</description>
 
   <maintainer email="martin.guenther@dfki.de">Martin Günther</maintainer>
@@ -16,7 +16,7 @@
   <author>Tully Foote</author>
   <author>Ivan Dryanovski</author>
 
-  <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>ament_cmake_ros</buildtool_depend>
 
   <depend>libphidget22</depend>
 
