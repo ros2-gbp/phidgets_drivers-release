@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package format="2">
   <name>phidgets_analog_inputs</name>
-  <version>2.0.0</version>
+  <version>2.0.1</version>
   <description>Driver for the Phidgets Analog Input devices</description>
 
   <maintainer email="martin.guenther@dfki.de">Martin Günther</maintainer>
@@ -11,7 +11,7 @@
 
   <author>Chris Lalancette</author>
 
-  <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>ament_cmake_ros</buildtool_depend>
 
   <depend>phidgets_api</depend>
   <depend>rclcpp</depend>
