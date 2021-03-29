@@ -27,10 +27,9 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef PHIDGETS_API_ANALOG_INPUT_H
-#define PHIDGETS_API_ANALOG_INPUT_H
+#ifndef PHIDGETS_API_ANALOG_INPUT_HPP
+#define PHIDGETS_API_ANALOG_INPUT_HPP
 
-#include <cstddef>
 #include <functional>
 
 #include <libphidget22/phidget22.h>
@@ -70,4 +69,4 @@ class AnalogInput final
 
 }  // namespace phidgets
 
-#endif  // PHIDGETS_API_ANALOG_INPUT_H
+#endif  // PHIDGETS_API_ANALOG_INPUT_HPP
