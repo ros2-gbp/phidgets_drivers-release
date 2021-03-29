@@ -27,10 +27,9 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef PHIDGETS_API_SPATIAL_H
-#define PHIDGETS_API_SPATIAL_H
+#ifndef PHIDGETS_API_SPATIAL_HPP
+#define PHIDGETS_API_SPATIAL_HPP
 
-#include <cstddef>
 #include <functional>
 
 #include <libphidget22/phidget22.h>
@@ -84,4 +83,4 @@ class Spatial final
 
 }  // namespace phidgets
 
-#endif  // PHIDGETS_API_SPATIAL_H
+#endif  // PHIDGETS_API_SPATIAL_HPP
