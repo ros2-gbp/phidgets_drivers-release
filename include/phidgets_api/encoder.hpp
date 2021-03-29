@@ -27,10 +27,9 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef PHIDGETS_API_ENCODER_H
-#define PHIDGETS_API_ENCODER_H
+#ifndef PHIDGETS_API_ENCODER_HPP
+#define PHIDGETS_API_ENCODER_HPP
 
-#include <cstddef>
 #include <functional>
 
 #include <libphidget22/phidget22.h>
@@ -95,4 +94,4 @@ class Encoder final
 
 }  // namespace phidgets
 
-#endif  // PHIDGETS_API_ENCODER_H
+#endif  // PHIDGETS_API_ENCODER_HPP
