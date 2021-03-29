@@ -1,3 +1,41 @@
+## phidgets_drivers (rolling) - 2.1.0-1
+
+The packages in the `phidgets_drivers` repository were released into the `rolling` distro by running `/usr/bin/bloom-release --track rolling --rosdistro rolling phidgets_drivers` on `Mon, 29 Mar 2021 18:32:32 -0000`
+
+These packages were released:
+- `libphidget22`
+- `phidgets_accelerometer`
+- `phidgets_analog_inputs`
+- `phidgets_api`
+- `phidgets_digital_inputs`
+- `phidgets_digital_outputs`
+- `phidgets_drivers`
+- `phidgets_gyroscope`
+- `phidgets_high_speed_encoder`
+- `phidgets_ik`
+- `phidgets_magnetometer`
+- `phidgets_motors`
+- `phidgets_msgs`
+- `phidgets_spatial`
+- `phidgets_temperature`
+
+Version of package(s) in repository `phidgets_drivers`:
+
+- upstream repository: https://github.com/ros-drivers/phidgets_drivers.git
+- release repository: https://github.com/ros2-gbp/phidgets_drivers-release.git
+- rosdistro version: `2.0.2-3`
+- old version: `2.0.2-3`
+- new version: `2.1.0-1`
+
+Versions of tools used:
+
+- bloom version: `0.10.3`
+- catkin_pkg version: `0.4.23`
+- rosdep version: `0.20.0`
+- rosdistro version: `0.8.3`
+- vcstools version: `0.1.42`
+
+
 ## phidgets_drivers (rolling) - 2.0.2-3
 
 The packages in the `phidgets_drivers` repository were released into the `rolling` distro by running `/usr/bin/bloom-release --track rolling --rosdistro rolling phidgets_drivers` on `Fri, 26 Mar 2021 13:01:47 -0000`
