@@ -193,8 +193,10 @@ void GyroscopeRosI::publishLatest()
 
     if (time_in_ns < last_ros_stamp_ns_)
     {
-        RCLCPP_WARN(get_logger(), "Time went backwards (%lu < %lu)!",
+        RCLCPP_WARN(get_logger(),
+                    "Time went backwards (%lu < %lu)! Not publishing message.",
                     time_in_ns, last_ros_stamp_ns_);
+        return;
     }
 
     last_ros_stamp_ns_ = time_in_ns;
@@ -293,7 +295,7 @@ void GyroscopeRosI::gyroscopeChangeCallback(const double angular_rate[3],
             can_publish_ = true;
         } else
         {
-            RCLCPP_WARN(
+            RCLCPP_DEBUG(
                 get_logger(),
                 "Data not within acceptable window for synchronization: "
                 "expected between %ld and %ld, saw %ld",
