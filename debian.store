@@ -1,1 +1,1 @@
-{"base": "7428f40", "parent": "debian/rolling/phidgets_high_speed_encoder", "previous": "1245ad7", "trim": "", "trimbase": ""}
+{"base": "de9d94a", "parent": "debian/galactic/phidgets_high_speed_encoder", "previous": "a42648f", "trim": "", "trimbase": ""}
