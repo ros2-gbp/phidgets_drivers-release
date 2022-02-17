@@ -27,8 +27,8 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef PHIDGETS_SPATIAL_SPATIAL_ROS_I_H
-#define PHIDGETS_SPATIAL_SPATIAL_ROS_I_H
+#ifndef PHIDGETS_SPATIAL_SPATIAL_ROS_I_HPP
+#define PHIDGETS_SPATIAL_SPATIAL_ROS_I_HPP
 
 #include <memory>
 #include <mutex>
@@ -105,8 +105,10 @@ class SpatialRosI final : public rclcpp::Node
     void spatialDataCallback(const double acceleration[3],
                              const double angular_rate[3],
                              const double magnetic_field[3], double timestamp);
+    void attachCallback();
+    void detachCallback();
 };
 
 }  // namespace phidgets
 
-#endif  // PHIDGETS_SPATIAL_SPATIAL_ROS_I_H
+#endif  // PHIDGETS_SPATIAL_SPATIAL_ROS_I_HPP
