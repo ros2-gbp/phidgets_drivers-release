@@ -27,10 +27,9 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef PHIDGETS_API_MAGNETOMETER_H
-#define PHIDGETS_API_MAGNETOMETER_H
+#ifndef PHIDGETS_API_MAGNETOMETER_HPP
+#define PHIDGETS_API_MAGNETOMETER_HPP
 
-#include <cstddef>
 #include <functional>
 
 #include <libphidget22/phidget22.h>
@@ -78,4 +77,4 @@ class Magnetometer final
 
 }  // namespace phidgets
 
-#endif  // PHIDGETS_API_MAGNETOMETER_H
+#endif  // PHIDGETS_API_MAGNETOMETER_HPP
