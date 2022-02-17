@@ -2,6 +2,21 @@
 Changelog for package phidgets_api
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.1.1 (2022-02-17)
+------------------
+* Merge pull request `#119 <https://github.com/ros-drivers/phidgets_drivers/issues/119>`_ from mintar/fix-reattachment-foxy
+  spatial: Fix behavior after USB reattachment
+* spatial: Add attach + detach handlers
+* Fix some clang-tidy warnings
+* Fix typo in error message (`#104 <https://github.com/ros-drivers/phidgets_drivers/issues/104>`_)
+* Contributors: Martin Günther
+
+2.1.0 (2021-03-29)
+------------------
+* Switch header guards to _HPP SUFFIX.
+* Remove unnecessary cstddef.
+* Contributors: Chris Lalancette
+
 2.0.2 (2020-06-01)
 ------------------
 * Use '=default' for default destructors. (`#66 <https://github.com/ros-drivers/phidgets_drivers/issues/66>`_)
