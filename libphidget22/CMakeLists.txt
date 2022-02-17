@@ -3,19 +3,20 @@ project(libphidget22)
 
 find_package(ament_cmake REQUIRED)
 
-set(extra_c_flags "-g -O2 -Wno-incompatible-pointer-types -Wno-deprecated-declarations -Wno-format-truncation")
+set(extra_c_flags "-g -O2 -Wno-incompatible-pointer-types -Wno-deprecated-declarations -Wno-format-truncation -fPIC")
 
 include(ExternalProject)
 ExternalProject_Add(EP_${PROJECT_NAME}
-    URL https://www.phidgets.com/downloads/phidget22/libraries/linux/libphidget22/libphidget22-1.4.20190605.tar.gz
-    URL_MD5 96e5d64263866d34e1d9a5f4ba78ba65
+    URL https://www.phidgets.com/downloads/phidget22/libraries/linux/libphidget22/libphidget22-1.7.20210816.tar.gz
+    URL_MD5 6eadbf23feeac246b5b687883d5f8d28
 
-    PATCH_COMMAND patch -p1 < ${CMAKE_CURRENT_SOURCE_DIR}/patch/libphidgets22-fix-uninitialized-memory-access.patch
+    PATCH_COMMAND patch -p1 < ${CMAKE_CURRENT_SOURCE_DIR}/patch/libphidgets22-1.7.20210816-fix-warnings.patch
     SOURCE_DIR ${PROJECT_BINARY_DIR}/${PROJECT_NAME}-src
     CONFIGURE_COMMAND
       <SOURCE_DIR>/configure
       CFLAGS=${extra_c_flags}
       --prefix=${CMAKE_CURRENT_BINARY_DIR}/libphidget22_install
+      --disable-ldconfig
     BUILD_COMMAND $(MAKE)
     INSTALL_COMMAND $(MAKE) install
 )
@@ -38,5 +39,8 @@ install(
 )
 
 ament_environment_hooks(env_hook/libphidget22_library_path.sh)
+set(ENV_VAR_NAME "LD_LIBRARY_PATH")
+set(ENV_VAR_VALUE "opt/libphidget22/lib")
+ament_environment_hooks(env_hook/libphidget22_library_path.dsv.in)
 
 ament_package(CONFIG_EXTRAS "cmake/libphidget22-extras.cmake.in")
