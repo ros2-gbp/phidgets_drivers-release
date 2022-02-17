@@ -107,19 +107,19 @@ SpatialRosI::SpatialRosI(const rclcpp::NodeOptions &options)
 
     // compass correction params (see
     // http://www.phidgets.com/docs/1044_User_Guide)
-    this->declare_parameter("cc_mag_field", rclcpp::PARAMETER_DOUBLE);
-    this->declare_parameter("cc_offset0", rclcpp::PARAMETER_DOUBLE);
-    this->declare_parameter("cc_offset1", rclcpp::PARAMETER_DOUBLE);
-    this->declare_parameter("cc_offset2", rclcpp::PARAMETER_DOUBLE);
-    this->declare_parameter("cc_gain0", rclcpp::PARAMETER_DOUBLE);
-    this->declare_parameter("cc_gain1", rclcpp::PARAMETER_DOUBLE);
-    this->declare_parameter("cc_gain2", rclcpp::PARAMETER_DOUBLE);
-    this->declare_parameter("cc_t0", rclcpp::PARAMETER_DOUBLE);
-    this->declare_parameter("cc_t1", rclcpp::PARAMETER_DOUBLE);
-    this->declare_parameter("cc_t2", rclcpp::PARAMETER_DOUBLE);
-    this->declare_parameter("cc_t3", rclcpp::PARAMETER_DOUBLE);
-    this->declare_parameter("cc_t4", rclcpp::PARAMETER_DOUBLE);
-    this->declare_parameter("cc_t5", rclcpp::PARAMETER_DOUBLE);
+    this->declare_parameter("cc_mag_field");
+    this->declare_parameter("cc_offset0");
+    this->declare_parameter("cc_offset1");
+    this->declare_parameter("cc_offset2");
+    this->declare_parameter("cc_gain0");
+    this->declare_parameter("cc_gain1");
+    this->declare_parameter("cc_gain2");
+    this->declare_parameter("cc_t0");
+    this->declare_parameter("cc_t1");
+    this->declare_parameter("cc_t2");
+    this->declare_parameter("cc_t3");
+    this->declare_parameter("cc_t4");
+    this->declare_parameter("cc_t5");
 
     bool has_compass_params = false;
     double cc_mag_field = 0.0;
@@ -152,7 +152,7 @@ SpatialRosI::SpatialRosI(const rclcpp::NodeOptions &options)
         cc_T4 = this->get_parameter("cc_t4").get_value<double>();
         cc_T5 = this->get_parameter("cc_t5").get_value<double>();
         has_compass_params = true;
-    } catch (const rclcpp::exceptions::ParameterUninitializedException &)
+    } catch (const rclcpp::exceptions::ParameterNotDeclaredException &)
     {
     }
 
@@ -171,7 +171,9 @@ SpatialRosI::SpatialRosI(const rclcpp::NodeOptions &options)
             serial_num, hub_port, false,
             std::bind(&SpatialRosI::spatialDataCallback, this,
                       std::placeholders::_1, std::placeholders::_2,
-                      std::placeholders::_3, std::placeholders::_4));
+                      std::placeholders::_3, std::placeholders::_4),
+            std::bind(&SpatialRosI::attachCallback, this),
+            std::bind(&SpatialRosI::detachCallback, this));
 
         RCLCPP_INFO(get_logger(), "Connected to serial %d",
                     spatial_->getSerialNumber());
@@ -423,11 +425,27 @@ void SpatialRosI::spatialDataCallback(const double acceleration[3],
         last_gyro_y_ = angular_rate[1] * (M_PI / 180.0);
         last_gyro_z_ = angular_rate[2] * (M_PI / 180.0);
 
-        // device reports data in Gauss, multiply by 1e-4 to convert to Tesla
-        last_mag_x_ = magnetic_field[0] * 1e-4;
-        last_mag_y_ = magnetic_field[1] * 1e-4;
-        last_mag_z_ = magnetic_field[2] * 1e-4;
+        if (magnetic_field[0] != PUNK_DBL)
+        {
+            // device reports data in Gauss, multiply by 1e-4 to convert to
+            // Tesla
+            last_mag_x_ = magnetic_field[0] * 1e-4;
+            last_mag_y_ = magnetic_field[1] * 1e-4;
+            last_mag_z_ = magnetic_field[2] * 1e-4;
+        } else
+        {
+            // data is PUNK_DBL ("unknown double"), which means the magnetometer
+            // did not return valid readings. When publishing at 250 Hz, this
+            // will happen in every second message, because the magnetometer can
+            // only sample at 125 Hz. It is still important to publish these
+            // messages, because a downstream node sometimes uses a
+            // TimeSynchronizer to get Imu and Magnetometer nodes.
+            double nan = std::numeric_limits<double>::quiet_NaN();
 
+            last_mag_x_ = nan;
+            last_mag_y_ = nan;
+            last_mag_z_ = nan;
+        }
         last_data_timestamp_ns_ = this_ts_ns;
 
         // Publish if we aren't publishing on a timer
@@ -447,6 +465,26 @@ void SpatialRosI::spatialDataCallback(const double acceleration[3],
     }
 
     last_cb_time_ = now;
+}
+
+void SpatialRosI::attachCallback()
+{
+    RCLCPP_INFO(get_logger(), "Phidget Spatial attached.");
+
+    // Set data interval. This is in attachCallback() because it has to be
+    // repeated on reattachment.
+    spatial_->setDataInterval(data_interval_ns_ / 1000 / 1000);
+
+    // Force resynchronization, because the device time is reset to 0 after
+    // reattachment.
+    synchronize_timestamps_ = true;
+    can_publish_ = false;
+    last_cb_time_ = rclcpp::Time(0);
+}
+
+void SpatialRosI::detachCallback()
+{
+    RCLCPP_INFO(get_logger(), "Phidget Spatial detached.");
 }
 
 }  // namespace phidgets

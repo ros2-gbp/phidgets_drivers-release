@@ -2,12 +2,7 @@
 Changelog for package phidgets_analog_inputs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-2.2.1 (2021-08-03)
-------------------
-* Update the ROS 2 readme files. (`#93 <https://github.com/ros-drivers/phidgets_drivers/issues/93>`_)
-* Contributors: Chris Lalancette
-
-2.2.0 (2021-05-20)
+2.1.1 (2022-02-17)
 ------------------
 
 2.1.0 (2021-03-29)
