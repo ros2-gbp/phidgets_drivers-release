@@ -171,7 +171,9 @@ SpatialRosI::SpatialRosI(const rclcpp::NodeOptions &options)
             serial_num, hub_port, false,
             std::bind(&SpatialRosI::spatialDataCallback, this,
                       std::placeholders::_1, std::placeholders::_2,
-                      std::placeholders::_3, std::placeholders::_4));
+                      std::placeholders::_3, std::placeholders::_4),
+            std::bind(&SpatialRosI::attachCallback, this),
+            std::bind(&SpatialRosI::detachCallback, this));
 
         RCLCPP_INFO(get_logger(), "Connected to serial %d",
                     spatial_->getSerialNumber());
@@ -279,8 +281,10 @@ void SpatialRosI::publishLatest()
 
     if (time_in_ns < last_ros_stamp_ns_)
     {
-        RCLCPP_WARN(get_logger(), "Time went backwards (%lu < %lu)!",
+        RCLCPP_WARN(get_logger(),
+                    "Time went backwards (%lu < %lu)! Not publishing message.",
                     time_in_ns, last_ros_stamp_ns_);
+        return;
     }
 
     last_ros_stamp_ns_ = time_in_ns;
@@ -399,7 +403,7 @@ void SpatialRosI::spatialDataCallback(const double acceleration[3],
             can_publish_ = true;
         } else
         {
-            RCLCPP_WARN(
+            RCLCPP_DEBUG(
                 get_logger(),
                 "Data not within acceptable window for synchronization: "
                 "expected between %ld and %ld, saw %ld",
@@ -421,11 +425,27 @@ void SpatialRosI::spatialDataCallback(const double acceleration[3],
         last_gyro_y_ = angular_rate[1] * (M_PI / 180.0);
         last_gyro_z_ = angular_rate[2] * (M_PI / 180.0);
 
-        // device reports data in Gauss, multiply by 1e-4 to convert to Tesla
-        last_mag_x_ = magnetic_field[0] * 1e-4;
-        last_mag_y_ = magnetic_field[1] * 1e-4;
-        last_mag_z_ = magnetic_field[2] * 1e-4;
+        if (magnetic_field[0] != PUNK_DBL)
+        {
+            // device reports data in Gauss, multiply by 1e-4 to convert to
+            // Tesla
+            last_mag_x_ = magnetic_field[0] * 1e-4;
+            last_mag_y_ = magnetic_field[1] * 1e-4;
+            last_mag_z_ = magnetic_field[2] * 1e-4;
+        } else
+        {
+            // data is PUNK_DBL ("unknown double"), which means the magnetometer
+            // did not return valid readings. When publishing at 250 Hz, this
+            // will happen in every second message, because the magnetometer can
+            // only sample at 125 Hz. It is still important to publish these
+            // messages, because a downstream node sometimes uses a
+            // TimeSynchronizer to get Imu and Magnetometer nodes.
+            double nan = std::numeric_limits<double>::quiet_NaN();
 
+            last_mag_x_ = nan;
+            last_mag_y_ = nan;
+            last_mag_z_ = nan;
+        }
         last_data_timestamp_ns_ = this_ts_ns;
 
         // Publish if we aren't publishing on a timer
@@ -445,6 +465,26 @@ void SpatialRosI::spatialDataCallback(const double acceleration[3],
     }
 
     last_cb_time_ = now;
+}
+
+void SpatialRosI::attachCallback()
+{
+    RCLCPP_INFO(get_logger(), "Phidget Spatial attached.");
+
+    // Set data interval. This is in attachCallback() because it has to be
+    // repeated on reattachment.
+    spatial_->setDataInterval(data_interval_ns_ / 1000 / 1000);
+
+    // Force resynchronization, because the device time is reset to 0 after
+    // reattachment.
+    synchronize_timestamps_ = true;
+    can_publish_ = false;
+    last_cb_time_ = rclcpp::Time(0);
+}
+
+void SpatialRosI::detachCallback()
+{
+    RCLCPP_INFO(get_logger(), "Phidget Spatial detached.");
 }
 
 }  // namespace phidgets

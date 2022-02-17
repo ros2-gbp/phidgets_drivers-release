@@ -2,6 +2,17 @@
 Changelog for package phidgets_magnetometer
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.1.1 (2022-02-17)
+------------------
+
+2.1.0 (2021-03-29)
+------------------
+* Don't publish messages that jumped back in time. (`#86 <https://github.com/ros-drivers/phidgets_drivers/issues/86>`_)
+* Log synchronization window details at DEBUG level (`#84 <https://github.com/ros-drivers/phidgets_drivers/issues/84>`_)
+* Get rid of deprecation warnings in Foxy. (`#75 <https://github.com/ros-drivers/phidgets_drivers/issues/75>`_)
+* Switch header guards to _HPP SUFFIX.
+* Contributors: Chris Lalancette, Martin Günther, Michael Grupp
+
 2.0.2 (2020-06-01)
 ------------------
 * Release build fixes (`#67 <https://github.com/ros-drivers/phidgets_drivers/issues/67>`_)
