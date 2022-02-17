@@ -2,6 +2,9 @@
 Changelog for package phidgets_temperature
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.2.2 (2022-02-17)
+------------------
+
 2.2.1 (2021-08-03)
 ------------------
 * Update the ROS 2 readme files. (`#93 <https://github.com/ros-drivers/phidgets_drivers/issues/93>`_)
