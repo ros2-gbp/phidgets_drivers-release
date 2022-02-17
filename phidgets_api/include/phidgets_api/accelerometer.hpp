@@ -27,10 +27,9 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef PHIDGETS_API_ACCELEROMETER_H
-#define PHIDGETS_API_ACCELEROMETER_H
+#ifndef PHIDGETS_API_ACCELEROMETER_HPP
+#define PHIDGETS_API_ACCELEROMETER_HPP
 
-#include <cstddef>
 #include <functional>
 
 #include <libphidget22/phidget22.h>
@@ -70,4 +69,4 @@ class Accelerometer final
 
 }  // namespace phidgets
 
-#endif  // PHIDGETS_API_ACCELEROMETER_H
+#endif  // PHIDGETS_API_ACCELEROMETER_HPP

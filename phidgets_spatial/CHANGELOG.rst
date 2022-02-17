@@ -1,6 +1,23 @@
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Changelog for package phidgets_imu
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Changelog for package phidgets_spatial
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+2.1.1 (2022-02-17)
+------------------
+* Fix behavior after USB reattachment (`#119 <https://github.com/ros-drivers/phidgets_drivers/issues/119>`_)
+  The Phidged Spatial never recovered after detaching and reattaching to
+  the USB port. This commit fixes that.
+* Add attach + detach handlers
+* Fix publishing of invalid mag readings (`#116 <https://github.com/ros-drivers/phidgets_drivers/issues/116>`_)
+* Contributors: Martin Günther
+
+2.1.0 (2021-03-29)
+------------------
+* Don't publish messages that jumped back in time. (`#86 <https://github.com/ros-drivers/phidgets_drivers/issues/86>`_)
+* Log synchronization window details at DEBUG level (`#84 <https://github.com/ros-drivers/phidgets_drivers/issues/84>`_)
+* Get rid of deprecation warnings in Foxy. (`#75 <https://github.com/ros-drivers/phidgets_drivers/issues/75>`_)
+* Switch header guards to _HPP SUFFIX.
+* Contributors: Chris Lalancette, Martin Günther, Michael Grupp
 
 2.0.2 (2020-06-01)
 ------------------
