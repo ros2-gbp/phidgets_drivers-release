@@ -1,3 +1,41 @@
+## phidgets_drivers (foxy) - 2.1.1-1
+
+The packages in the `phidgets_drivers` repository were released into the `foxy` distro by running `/usr/bin/bloom-release phidgets_drivers --rosdistro foxy -y` on `Thu, 17 Feb 2022 15:56:30 -0000`
+
+These packages were released:
+- `libphidget22`
+- `phidgets_accelerometer`
+- `phidgets_analog_inputs`
+- `phidgets_api`
+- `phidgets_digital_inputs`
+- `phidgets_digital_outputs`
+- `phidgets_drivers`
+- `phidgets_gyroscope`
+- `phidgets_high_speed_encoder`
+- `phidgets_ik`
+- `phidgets_magnetometer`
+- `phidgets_motors`
+- `phidgets_msgs`
+- `phidgets_spatial`
+- `phidgets_temperature`
+
+Version of package(s) in repository `phidgets_drivers`:
+
+- upstream repository: https://github.com/ros-drivers/phidgets_drivers.git
+- release repository: https://github.com/ros2-gbp/phidgets_drivers-release.git
+- rosdistro version: `2.0.2-1`
+- old version: `2.0.2-1`
+- new version: `2.1.1-1`
+
+Versions of tools used:
+
+- bloom version: `0.10.7`
+- catkin_pkg version: `0.4.24`
+- rosdep version: `0.21.0`
+- rosdistro version: `0.8.3`
+- vcstools version: `0.1.42`
+
+
 ## phidgets_drivers (galactic) - 2.2.1-1
 
 The packages in the `phidgets_drivers` repository were released into the `galactic` distro by running `/usr/bin/bloom-release --track galactic --rosdistro galactic phidgets_drivers` on `Tue, 03 Aug 2021 12:28:55 -0000`
