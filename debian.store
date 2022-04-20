@@ -1,1 +1,1 @@
-{"base": "002487de", "parent": "debian/rolling/phidgets_temperature", "previous": "426b1439", "trim": "", "trimbase": ""}
+{"base": "9b25ee26", "parent": "debian/humble/phidgets_temperature", "previous": "b78d371c", "trim": "", "trimbase": ""}
