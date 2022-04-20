@@ -1,0 +1,12 @@
+Source: ros-humble-phidgets-ik
+Section: misc
+Priority: optional
+Maintainer: Martin Günther <martin.guenther@dfki.de>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake, ros-humble-ros-workspace
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-phidgets-ik
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-launch, ros-humble-phidgets-analog-inputs, ros-humble-phidgets-digital-inputs, ros-humble-phidgets-digital-outputs, ros-humble-ros-workspace
+Description: Driver for the Phidgets InterfaceKit devices
