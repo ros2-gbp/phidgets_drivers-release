@@ -1,1 +1,1 @@
-{"base": "88d2c00f", "parent": "debian/rolling/phidgets_gyroscope", "previous": "e2b1f3df", "trim": "", "trimbase": ""}
+{"base": "ab544485", "parent": "debian/humble/phidgets_gyroscope", "previous": "209cb25b", "trim": "", "trimbase": ""}
