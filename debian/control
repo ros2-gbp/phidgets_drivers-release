@@ -1,0 +1,12 @@
+Source: ros-humble-phidgets-drivers
+Section: misc
+Priority: optional
+Maintainer: Martin Günther <martin.guenther@dfki.de>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake, ros-humble-ros-workspace
+Homepage: http://ros.org/wiki/phidgets_drivers
+Standards-Version: 3.9.2
+
+Package: ros-humble-phidgets-drivers
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-libphidget22, ros-humble-phidgets-accelerometer, ros-humble-phidgets-analog-inputs, ros-humble-phidgets-api, ros-humble-phidgets-digital-inputs, ros-humble-phidgets-digital-outputs, ros-humble-phidgets-gyroscope, ros-humble-phidgets-high-speed-encoder, ros-humble-phidgets-ik, ros-humble-phidgets-magnetometer, ros-humble-phidgets-motors, ros-humble-phidgets-msgs, ros-humble-phidgets-spatial, ros-humble-phidgets-temperature, ros-humble-ros-workspace
+Description: API and ROS drivers for Phidgets devices
