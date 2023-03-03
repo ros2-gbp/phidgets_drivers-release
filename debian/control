@@ -1,0 +1,12 @@
+Source: ros-humble-phidgets-gyroscope
+Section: misc
+Priority: optional
+Maintainer: Martin Günther <martin.guenther@dfki.de>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-ros, ros-humble-phidgets-api, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-std-msgs, ros-humble-std-srvs, ros-humble-ros-workspace
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-phidgets-gyroscope
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-launch, ros-humble-phidgets-api, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-std-msgs, ros-humble-std-srvs, ros-humble-ros-workspace
+Description: Driver for the Phidgets Gyroscope devices
