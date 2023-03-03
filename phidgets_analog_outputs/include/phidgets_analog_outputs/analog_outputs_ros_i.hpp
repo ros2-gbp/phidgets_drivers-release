@@ -27,62 +27,53 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef PHIDGETS_HIGH_SPEED_ENCODER_HIGH_SPEED_ENCODER_ROS_I_HPP
-#define PHIDGETS_HIGH_SPEED_ENCODER_HIGH_SPEED_ENCODER_ROS_I_HPP
+#ifndef PHIDGETS_ANALOG_OUTPUTS_ANALOG_OUTPUTS_ROS_I_HPP
+#define PHIDGETS_ANALOG_OUTPUTS_ANALOG_OUTPUTS_ROS_I_HPP
 
 #include <memory>
-#include <mutex>
 #include <string>
 #include <vector>
 
 #include <rclcpp/rclcpp.hpp>
-#include <sensor_msgs/msg/joint_state.hpp>
+#include <std_msgs/msg/float64.hpp>
 
-#include "phidgets_api/encoders.hpp"
-#include "phidgets_msgs/msg/encoder_decimated_speed.hpp"
+#include "phidgets_api/analog_outputs.hpp"
+#include "phidgets_msgs/srv/set_analog_output.hpp"
 
 namespace phidgets {
 
-struct EncoderDataToPub {
-    double instantaneous_speed = .0;
-    std::vector<double> speeds_buffer;
-    bool speed_buffer_updated = false;
-    int loops_without_update_speed_buffer = 0;
-    std::string joint_name;
-    double joint_tick2rad;
-    rclcpp::Publisher<phidgets_msgs::msg::EncoderDecimatedSpeed>::SharedPtr
-        encoder_decimspeed_pub;
-};
+class AnalogOutputsRosI;
 
-class HighSpeedEncoderRosI final : public rclcpp::Node
+class AnalogOutputSetter final
 {
   public:
-    explicit HighSpeedEncoderRosI(const rclcpp::NodeOptions& options);
+    explicit AnalogOutputSetter(AnalogOutputs* aos, int index,
+                                AnalogOutputsRosI* node,
+                                const std::string& topicname);
 
   private:
-    std::unique_ptr<Encoders> encs_;
-    std::mutex encoder_mutex_;
-    /// Size of this vector = number of found encoders.
-    std::vector<EncoderDataToPub> enc_data_to_pub_;
-    std::string frame_id_;
-    /// (Default=10) Number of samples for the sliding window average filter of
-    /// speeds.
-    int speed_filter_samples_len_ = 10;
-    /// (Default=1) Number of "ITERATE" loops without any new encoder tick
-    /// before resetting the filtered average velocities.
-    int speed_filter_idle_iter_loops_before_reset_ = 1;
-
-    rclcpp::Publisher<sensor_msgs::msg::JointState>::SharedPtr encoder_pub_;
-    void timerCallback();
-    rclcpp::TimerBase::SharedPtr timer_;
-    double publish_rate_;
-
-    /// Publish the latest state for all encoder channels:
-    void publishLatest();
-
-    void positionChangeHandler(int channel, int position_change, double time,
-                               int index_triggered);
+    void setMsgCallback(const std_msgs::msg::Float64::SharedPtr msg);
+    rclcpp::Subscription<std_msgs::msg::Float64>::SharedPtr subscription_;
+    AnalogOutputs* aos_;
+    int index_;
 };
+
+class AnalogOutputsRosI final : public rclcpp::Node
+{
+  public:
+    explicit AnalogOutputsRosI(const rclcpp::NodeOptions& options);
+
+  private:
+    std::unique_ptr<AnalogOutputs> aos_;
+    std::vector<std::unique_ptr<AnalogOutputSetter>> out_subs_;
+
+    rclcpp::Service<phidgets_msgs::srv::SetAnalogOutput>::SharedPtr out_srv_;
+
+    bool setSrvCallback(
+        const std::shared_ptr<phidgets_msgs::srv::SetAnalogOutput::Request> req,
+        std::shared_ptr<phidgets_msgs::srv::SetAnalogOutput::Response> res);
+};
+
 }  // namespace phidgets
 
-#endif  // PHIDGETS_HIGH_SPEED_ENCODER_HIGH_SPEED_ENCODER_ROS_I_HPP
+#endif  // PHIDGETS_ANALOG_OUTPUTS_ANALOG_OUTPUTS_ROS_I_HPP
