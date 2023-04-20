@@ -1,1 +1,1 @@
-{"base": "25f5428b", "parent": "debian/rolling/phidgets_digital_inputs", "previous": "649549d4", "trim": "", "trimbase": ""}
+{"base": "5b846724", "parent": "debian/iron/phidgets_digital_inputs", "previous": "7820a3e1", "trim": "", "trimbase": ""}
