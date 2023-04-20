@@ -1,1 +1,1 @@
-{"base": "5fd1f7cb", "parent": "debian/rolling/libphidget22", "previous": "fcb7039b", "trim": "", "trimbase": ""}
+{"base": "dda4a407", "parent": "debian/iron/libphidget22", "previous": "a2430ac1", "trim": "", "trimbase": ""}
