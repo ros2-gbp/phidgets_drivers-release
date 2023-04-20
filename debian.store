@@ -1,1 +1,1 @@
-{"base": "632a4d97", "parent": "debian/rolling/phidgets_magnetometer", "previous": "1bf662b3", "trim": "", "trimbase": ""}
+{"base": "e0f7f95c", "parent": "debian/iron/phidgets_magnetometer", "previous": "ce5335e7", "trim": "", "trimbase": ""}
