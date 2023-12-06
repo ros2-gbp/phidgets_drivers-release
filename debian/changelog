@@ -1,0 +1,145 @@
+ros-rolling-phidgets-analog-outputs (2.3.2-1bullseye) bullseye; urgency=high
+
+
+
+ -- Martin Günther <martin.guenther@dfki.de>  Sun, 26 Nov 2023 23:00:00 -0000
+
+ros-rolling-phidgets-analog-outputs (2.3.1-1bullseye) bullseye; urgency=high
+
+  * adding support for analog outputs for ROS2 (#145 <https://github.com/ros-drivers/phidgets_drivers/issues/145>)
+    * support for analog output
+    Co-authored-by: Alexis <mailto:alexis.fetet@capacites.fr>
+    Co-authored-by: Chris Lalancette <mailto:clalancette@openrobotics.org>
+  * Contributors: Alexis Fetet
+  * adding support for analog outputs for ROS2 (#145 <https://github.com/ros-drivers/phidgets_drivers/issues/145>)
+  * Contributors: Alexis Fetet
+
+ -- Martin Günther <martin.guenther@dfki.de>  Thu, 02 Mar 2023 23:00:00 -0000
+
+ros-rolling-phidgets-analog-outputs (2.3.0-1bullseye) bullseye; urgency=high
+
+
+
+ -- Martin Günther <martin.guenther@dfki.de>  Tue, 12 Apr 2022 22:00:00 -0000
+
+ros-rolling-phidgets-analog-outputs (2.2.2-1bullseye) bullseye; urgency=high
+
+
+
+ -- Martin Günther <martin.guenther@dfki.de>  Wed, 16 Feb 2022 23:00:00 -0000
+
+ros-rolling-phidgets-analog-outputs (2.2.1-1bullseye) bullseye; urgency=high
+
+
+
+ -- Martin Günther <martin.guenther@dfki.de>  Mon, 02 Aug 2021 22:00:00 -0000
+
+ros-rolling-phidgets-analog-outputs (2.2.0-1bullseye) bullseye; urgency=high
+
+
+
+ -- Martin Günther <martin.guenther@dfki.de>  Wed, 19 May 2021 22:00:00 -0000
+
+ros-rolling-phidgets-analog-outputs (2.1.0-1bullseye) bullseye; urgency=high
+
+
+
+ -- Martin Günther <martin.guenther@dfki.de>  Sun, 28 Mar 2021 22:00:00 -0000
+
+ros-rolling-phidgets-analog-outputs (2.0.2-1bullseye) bullseye; urgency=high
+
+
+
+ -- Martin Günther <martin.guenther@dfki.de>  Sun, 31 May 2020 22:00:00 -0000
+
+ros-rolling-phidgets-analog-outputs (2.0.1-1bullseye) bullseye; urgency=high
+
+
+
+ -- Martin Günther <martin.guenther@dfki.de>  Thu, 05 Dec 2019 13:46:00 -0000
+
+ros-rolling-phidgets-analog-outputs (2.0.0-1bullseye) bullseye; urgency=high
+
+
+
+ -- Martin Günther <martin.guenther@dfki.de>  Thu, 05 Dec 2019 12:49:00 -0000
+
+ros-rolling-phidgets-analog-outputs (0.7.9-1bullseye) bullseye; urgency=high
+
+
+
+ -- Martin Günther <martin.guenther@dfki.de>  Thu, 27 Jun 2019 22:00:00 -0000
+
+ros-rolling-phidgets-analog-outputs (0.7.8-1bullseye) bullseye; urgency=high
+
+
+
+ -- Martin Günther <martin.guenther@dfki.de>  Sun, 05 May 2019 22:00:00 -0000
+
+ros-rolling-phidgets-analog-outputs (0.7.7-1bullseye) bullseye; urgency=high
+
+
+
+ -- Martin Günther <martin.guenther@dfki.de>  Mon, 17 Sep 2018 22:00:00 -0000
+
+ros-rolling-phidgets-analog-outputs (0.7.6-1bullseye) bullseye; urgency=high
+
+
+
+ -- Martin Günther <martin.guenther@dfki.de>  Wed, 08 Aug 2018 22:00:00 -0000
+
+ros-rolling-phidgets-analog-outputs (0.7.5-1bullseye) bullseye; urgency=high
+
+
+
+ -- Martin Günther <martin.guenther@dfki.de>  Tue, 30 Jan 2018 23:00:00 -0000
+
+ros-rolling-phidgets-analog-outputs (0.7.4-1bullseye) bullseye; urgency=high
+
+
+
+ -- Martin Günther <martin.guenther@dfki.de>  Tue, 03 Oct 2017 22:00:00 -0000
+
+ros-rolling-phidgets-analog-outputs (0.7.3-1bullseye) bullseye; urgency=high
+
+
+
+ -- Martin Günther <martin.guenther@dfki.de>  Thu, 29 Jun 2017 22:00:00 -0000
+
+ros-rolling-phidgets-analog-outputs (0.7.2-1bullseye) bullseye; urgency=high
+
+
+
+ -- Martin Günther <martin.guenther@dfki.de>  Thu, 01 Jun 2017 22:00:00 -0000
+
+ros-rolling-phidgets-analog-outputs (0.7.1-1bullseye) bullseye; urgency=high
+
+
+
+ -- Martin Günther <martin.guenther@dfki.de>  Sun, 21 May 2017 22:00:00 -0000
+
+ros-rolling-phidgets-analog-outputs (0.7.0-1bullseye) bullseye; urgency=high
+
+
+
+ -- Martin Günther <martin.guenther@dfki.de>  Fri, 17 Feb 2017 16:40:00 -0000
+
+ros-rolling-phidgets-analog-outputs (0.2.3-1bullseye) bullseye; urgency=high
+
+
+
+ -- Martin Günther <martin.guenther@dfki.de>  Fri, 17 Feb 2017 11:11:00 -0000
+
+ros-rolling-phidgets-analog-outputs (0.2.2-1bullseye) bullseye; urgency=high
+
+
+
+ -- Martin Günther <martin.guenther@dfki.de>  Sun, 22 Mar 2015 23:00:00 -0000
+
+ros-rolling-phidgets-analog-outputs (0.2.1-1bullseye) bullseye; urgency=high
+
+
+
+ -- Martin Günther <martin.guenther@dfki.de>  Wed, 14 Jan 2015 23:00:00 -0000
+
+
