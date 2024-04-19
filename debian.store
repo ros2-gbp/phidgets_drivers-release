@@ -1,1 +1,1 @@
-{"base": "63f0d931", "parent": "debian/rolling/phidgets_drivers", "previous": "b70f1f58", "trim": "", "trimbase": ""}
+{"base": "b22568e2", "parent": "debian/jazzy/phidgets_drivers", "previous": "522ac902", "trim": "", "trimbase": ""}
