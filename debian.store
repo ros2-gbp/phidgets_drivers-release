@@ -1,1 +1,1 @@
-{"base": "31d6cd3b", "parent": "debian/rolling/phidgets_analog_outputs", "previous": "2cda8f5f", "trim": "", "trimbase": ""}
+{"base": "df9cb34e", "parent": "debian/jazzy/phidgets_analog_outputs", "previous": "e8833081", "trim": "", "trimbase": ""}
