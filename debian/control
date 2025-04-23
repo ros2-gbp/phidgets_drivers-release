@@ -1,0 +1,12 @@
+Source: ros-kilted-phidgets-ik
+Section: misc
+Priority: optional
+Maintainer: Martin Günther <martin.guenther@dfki.de>
+Build-Depends: debhelper (>= 9.0.0), ros-kilted-ament-cmake, ros-kilted-ros-workspace
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-kilted-phidgets-ik
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-kilted-launch, ros-kilted-phidgets-analog-inputs, ros-kilted-phidgets-digital-inputs, ros-kilted-phidgets-digital-outputs, ros-kilted-ros-workspace
+Description: Driver for the Phidgets InterfaceKit devices
