@@ -1,1 +1,1 @@
-{"base": "c4419c0e", "parent": "debian/rolling/phidgets_api", "previous": "2708bc88", "trim": "", "trimbase": ""}
+{"base": "33eacb7e95e4", "parent": "debian/kilted/phidgets_api", "previous": "0f5f9292c92c", "trim": "", "trimbase": ""}
