@@ -1,0 +1,12 @@
+Source: ros-kilted-phidgets-api
+Section: misc
+Priority: optional
+Maintainer: Martin Günther <martin.guenther@dfki.de>
+Build-Depends: debhelper (>= 9.0.0), ros-kilted-ament-cmake-ros, ros-kilted-libphidget22, ros-kilted-ros-workspace
+Homepage: http://ros.org/wiki/phidgets_api
+Standards-Version: 3.9.2
+
+Package: ros-kilted-phidgets-api
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-kilted-libphidget22, ros-kilted-ros-workspace
+Description: A C++ Wrapper for the Phidgets C API
