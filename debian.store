@@ -1,1 +1,1 @@
-{"base": "a71079fe", "parent": "debian/rolling/phidgets_analog_inputs", "previous": "fbba799b", "trim": "", "trimbase": ""}
+{"base": "3c200a74a42c", "parent": "debian/kilted/phidgets_analog_inputs", "previous": "6c6fa8d01efc", "trim": "", "trimbase": ""}
