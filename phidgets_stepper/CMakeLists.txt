@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(phidgets_gyroscope)
+project(phidgets_stepper)
 
 # Default to C++14
 if(NOT CMAKE_CXX_STANDARD)
@@ -7,11 +7,12 @@ if(NOT CMAKE_CXX_STANDARD)
 endif()
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-  add_compile_options(-Wall -Wextra -Wpedantic)
+  add_compile_options(-Wall -Wextra -Wpedantic -g -ggdb)
 endif()
 
 find_package(ament_cmake_ros REQUIRED)
 find_package(phidgets_api REQUIRED)
+find_package(phidgets_msgs REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(rclcpp_components REQUIRED)
 find_package(sensor_msgs REQUIRED)
@@ -20,9 +21,10 @@ find_package(std_srvs REQUIRED)
 
 include_directories(include)
 
-add_library(phidgets_gyroscope SHARED src/gyroscope_ros_i.cpp)
-ament_target_dependencies(phidgets_gyroscope
+add_library(phidgets_stepper SHARED src/stepper_ros_i.cpp)
+ament_target_dependencies(phidgets_stepper
   phidgets_api
+  phidgets_msgs
   rclcpp
   rclcpp_components
   sensor_msgs
@@ -30,10 +32,10 @@ ament_target_dependencies(phidgets_gyroscope
   std_srvs
 )
 
-rclcpp_components_register_nodes(phidgets_gyroscope
-  "phidgets::GyroscopeRosI")
+rclcpp_components_register_nodes(phidgets_stepper
+    "phidgets::StepperRosI")
 
-install(TARGETS phidgets_gyroscope
+install(TARGETS phidgets_stepper
   ARCHIVE DESTINATION lib
   LIBRARY DESTINATION lib
   RUNTIME DESTINATION bin
