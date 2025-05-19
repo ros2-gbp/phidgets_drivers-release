@@ -1,0 +1,180 @@
+ros-rolling-phidgets-motors (2.3.4-1noble) noble; urgency=high
+
+  * Upgrade to CMake 3.8, add file depend (#189 <https://github.com/ros-drivers/phidgets_drivers/issues/189>)
+  * Contributors: Martin Günther
+
+ -- Martin Günther <martin.guenther@dfki.de>  Sun, 18 May 2025 22:00:00 -0000
+
+ros-rolling-phidgets-motors (2.3.3-1noble) noble; urgency=high
+
+  * Add support for VINT networkhub (#172 <https://github.com/ros-drivers/phidgets_drivers/issues/172>)
+    This is a port of #127 <https://github.com/ros-drivers/phidgets_drivers/issues/127> to ROS2.
+    Closes #135 <https://github.com/ros-drivers/phidgets_drivers/issues/135>.
+  * Contributors: Martin Günther
+
+ -- Martin Günther <martin.guenther@dfki.de>  Tue, 12 Mar 2024 23:00:00 -0000
+
+ros-rolling-phidgets-motors (2.3.2-1noble) noble; urgency=high
+
+
+
+ -- Martin Günther <martin.guenther@dfki.de>  Sun, 26 Nov 2023 23:00:00 -0000
+
+ros-rolling-phidgets-motors (2.3.1-1noble) noble; urgency=high
+
+
+
+ -- Martin Günther <martin.guenther@dfki.de>  Thu, 02 Mar 2023 23:00:00 -0000
+
+ros-rolling-phidgets-motors (2.3.0-1noble) noble; urgency=high
+
+
+
+ -- Martin Günther <martin.guenther@dfki.de>  Tue, 12 Apr 2022 22:00:00 -0000
+
+ros-rolling-phidgets-motors (2.2.2-1noble) noble; urgency=high
+
+
+
+ -- Martin Günther <martin.guenther@dfki.de>  Wed, 16 Feb 2022 23:00:00 -0000
+
+ros-rolling-phidgets-motors (2.2.1-1noble) noble; urgency=high
+
+  * Update the ROS 2 readme files. (#93 <https://github.com/ros-drivers/phidgets_drivers/issues/93>)
+  * Contributors: Chris Lalancette
+
+ -- Martin Günther <martin.guenther@dfki.de>  Mon, 02 Aug 2021 22:00:00 -0000
+
+ros-rolling-phidgets-motors (2.2.0-1noble) noble; urgency=high
+
+
+
+ -- Martin Günther <martin.guenther@dfki.de>  Wed, 19 May 2021 22:00:00 -0000
+
+ros-rolling-phidgets-motors (2.1.0-1noble) noble; urgency=high
+
+  * Get rid of deprecation warnings in Foxy. (#75 <https://github.com/ros-drivers/phidgets_drivers/issues/75>)
+  * Switch header guards to _HPP SUFFIX.
+  * Contributors: Chris Lalancette
+
+ -- Martin Günther <martin.guenther@dfki.de>  Sun, 28 Mar 2021 22:00:00 -0000
+
+ros-rolling-phidgets-motors (2.0.2-1noble) noble; urgency=high
+
+  * Release build fixes (#67 <https://github.com/ros-drivers/phidgets_drivers/issues/67>)
+  * Contributors: Chris Lalancette
+
+ -- Martin Günther <martin.guenther@dfki.de>  Sun, 31 May 2020 22:00:00 -0000
+
+ros-rolling-phidgets-motors (2.0.1-1noble) noble; urgency=high
+
+  * Switch the buildtoo_depend to ament_cmake_ros. (#65 <https://github.com/ros-drivers/phidgets_drivers/issues/65>)
+  * Contributors: Chris Lalancette
+
+ -- Martin Günther <martin.guenther@dfki.de>  Wed, 04 Dec 2019 23:00:00 -0000
+
+ros-rolling-phidgets-motors (2.0.0-1noble) noble; urgency=high
+
+  * Include file cleanup.
+  * Switch from NULL to nullptr.
+  * Update READMEs to use "Published Topics" and "Subscribed Topics". (#59 <https://github.com/ros-drivers/phidgets_drivers/issues/59>)
+  * Change launch output to "both" so it logs as well.
+  * Make publish_rate a double.
+  * Only publish motor_back_emf if supported by DC Motor device (#53 <https://github.com/ros-drivers/phidgets_drivers/issues/53>)
+  * Print out the serial number when connecting.
+  * Update documentation to mention device dependent fields.
+  * Port motors to ROS 2.
+  * Ignore all packages for ROS 2 port.
+  * Update maintainers in package.xml
+  * Merge pull request #39 <https://github.com/ros-drivers/phidgets_drivers/issues/39> from clalancette/add-libphidget22
+  * Add launch files for all drivers.
+  * Add in try/catch blocks for connecting.
+  * Fixes from review.
+  * Documentation updates to README.md
+  * Set the publish_rate to 0 by default.
+  * Add in the license files and add to the headers.
+  * Remove nodes in favor of nodelets.
+  * Rewrite Motor Phidget to use libphidget22.
+  * Contributors: Chris Lalancette, Martin Günther, Peter Polidoro
+
+ -- Martin Günther <martin.guenther@dfki.de>  Wed, 04 Dec 2019 23:00:00 -0000
+
+ros-rolling-phidgets-motors (0.7.9-1noble) noble; urgency=high
+
+
+
+ -- Martin Günther <martin.guenther@dfki.de>  Thu, 27 Jun 2019 22:00:00 -0000
+
+ros-rolling-phidgets-motors (0.7.8-1noble) noble; urgency=high
+
+
+
+ -- Martin Günther <martin.guenther@dfki.de>  Sun, 05 May 2019 22:00:00 -0000
+
+ros-rolling-phidgets-motors (0.7.7-1noble) noble; urgency=high
+
+
+
+ -- Martin Günther <martin.guenther@dfki.de>  Mon, 17 Sep 2018 22:00:00 -0000
+
+ros-rolling-phidgets-motors (0.7.6-1noble) noble; urgency=high
+
+
+
+ -- Martin Günther <martin.guenther@dfki.de>  Wed, 08 Aug 2018 22:00:00 -0000
+
+ros-rolling-phidgets-motors (0.7.5-1noble) noble; urgency=high
+
+
+
+ -- Martin Günther <martin.guenther@dfki.de>  Tue, 30 Jan 2018 23:00:00 -0000
+
+ros-rolling-phidgets-motors (0.7.4-1noble) noble; urgency=high
+
+
+
+ -- Martin Günther <martin.guenther@dfki.de>  Tue, 03 Oct 2017 22:00:00 -0000
+
+ros-rolling-phidgets-motors (0.7.3-1noble) noble; urgency=high
+
+
+
+ -- Martin Günther <martin.guenther@dfki.de>  Thu, 29 Jun 2017 22:00:00 -0000
+
+ros-rolling-phidgets-motors (0.7.2-1noble) noble; urgency=high
+
+
+
+ -- Martin Günther <martin.guenther@dfki.de>  Thu, 01 Jun 2017 22:00:00 -0000
+
+ros-rolling-phidgets-motors (0.7.1-1noble) noble; urgency=high
+
+
+
+ -- Martin Günther <martin.guenther@dfki.de>  Sun, 21 May 2017 22:00:00 -0000
+
+ros-rolling-phidgets-motors (0.7.0-1noble) noble; urgency=high
+
+
+
+ -- Martin Günther <martin.guenther@dfki.de>  Fri, 17 Feb 2017 16:40:00 -0000
+
+ros-rolling-phidgets-motors (0.2.3-1noble) noble; urgency=high
+
+
+
+ -- Martin Günther <martin.guenther@dfki.de>  Fri, 17 Feb 2017 11:11:00 -0000
+
+ros-rolling-phidgets-motors (0.2.2-1noble) noble; urgency=high
+
+
+
+ -- Martin Günther <martin.guenther@dfki.de>  Sun, 22 Mar 2015 23:00:00 -0000
+
+ros-rolling-phidgets-motors (0.2.1-1noble) noble; urgency=high
+
+
+
+ -- Martin Günther <martin.guenther@dfki.de>  Wed, 14 Jan 2015 23:00:00 -0000
+
+
