@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.8)
 project(phidgets_msgs)
 
 # Default to C++14
@@ -16,11 +16,15 @@ find_package(std_msgs REQUIRED)
 
 set(msg_files
   "msg/EncoderDecimatedSpeed.msg"
+  "msg/StepperCommand.msg"
+  "msg/StepperConfig.msg"
+  "msg/StepperState.msg"
 )
 
 set(srv_files
   "srv/SetAnalogOutput.srv"
   "srv/SetDigitalOutput.srv"
+  "srv/Trigger.srv"
 )
 
 rosidl_generate_interfaces(${PROJECT_NAME}
