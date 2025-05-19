@@ -40,6 +40,8 @@ Drivers for various [Phidgets](https://www.phidgets.com) devices. This package i
 
   * [`phidgets_spatial`](phidgets_spatial/README.md)
 
+  * [`phidgets_stepper`](phidgets_stepper/README.md)
+
   * [`phidgets_temperature`](phidgets_temperature/README.md)
 
 Concerning Phidgets
@@ -174,10 +176,10 @@ pre-commit Formatting Checks
 
 This repo has a [pre-commit](https://pre-commit.com/) check that runs in CI.
 You can use this locally and set it up to run automatically before you commit
-something. To install, use pip:
+something. To install, use apt:
 
 ```bash
-pip3 install --user pre-commit
+sudo apt install pre-commit
 ```
 
 To run over all the files in the repo manually:
