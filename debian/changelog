@@ -1,0 +1,19 @@
+ros-jazzy-phidgets-stepper (2.4.0-1noble) noble; urgency=high
+
+  * Merge pull request #191 <https://github.com/ros-drivers/phidgets_drivers/issues/191> from mintar/remove-ament-target-dependencies
+    [kilted] Update deprecated call to ament_target_dependencies
+  * Update to C++ standard 17
+  * [kilted] Update deprecated call to ament_target_dependencies
+  * Contributors: Martin Günther
+
+ -- Martin Günther <martin.guenther@dfki.de>  Thu, 29 May 2025 22:00:00 -0000
+
+ros-jazzy-phidgets-stepper (2.3.4-1noble) noble; urgency=high
+
+  * Upgrade to CMake 3.8, add file depend (#189 <https://github.com/ros-drivers/phidgets_drivers/issues/189>)
+  * Add stepper motor package for ROS2 (STC1005) (#186 <https://github.com/ros-drivers/phidgets_drivers/issues/186>)
+  * Contributors: Cedric Pradalier, Martin Günther
+
+ -- Martin Günther <martin.guenther@dfki.de>  Sun, 18 May 2025 22:00:00 -0000
+
+
