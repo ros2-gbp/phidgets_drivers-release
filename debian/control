@@ -1,0 +1,12 @@
+Source: ros-kilted-phidgets-drivers
+Section: misc
+Priority: optional
+Maintainer: Martin Günther <martin.guenther@dfki.de>
+Build-Depends: debhelper (>= 9.0.0), ros-kilted-ament-cmake, ros-kilted-ros-workspace
+Homepage: http://ros.org/wiki/phidgets_drivers
+Standards-Version: 3.9.2
+
+Package: ros-kilted-phidgets-drivers
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-kilted-libphidget22, ros-kilted-phidgets-accelerometer, ros-kilted-phidgets-analog-inputs, ros-kilted-phidgets-api, ros-kilted-phidgets-digital-inputs, ros-kilted-phidgets-digital-outputs, ros-kilted-phidgets-gyroscope, ros-kilted-phidgets-high-speed-encoder, ros-kilted-phidgets-ik, ros-kilted-phidgets-magnetometer, ros-kilted-phidgets-motors, ros-kilted-phidgets-msgs, ros-kilted-phidgets-spatial, ros-kilted-phidgets-temperature, ros-kilted-ros-workspace
+Description: API and ROS drivers for Phidgets devices
