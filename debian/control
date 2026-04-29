@@ -1,0 +1,12 @@
+Source: ros-lyrical-phidgets-ik
+Section: misc
+Priority: optional
+Maintainer: Martin Günther <martin.guenther@dfki.de>
+Build-Depends: debhelper (>= 9.0.0), ros-lyrical-ament-cmake, ros-lyrical-ros-workspace
+Homepage: https://index.ros.org/p/phidgets_ik/#lyrical
+Standards-Version: 3.9.2
+
+Package: ros-lyrical-phidgets-ik
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-lyrical-launch, ros-lyrical-phidgets-analog-inputs, ros-lyrical-phidgets-digital-inputs, ros-lyrical-phidgets-digital-outputs, ros-lyrical-ros-workspace
+Description: Driver for the Phidgets InterfaceKit devices
