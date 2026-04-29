@@ -1,0 +1,12 @@
+Source: ros-lyrical-phidgets-drivers
+Section: misc
+Priority: optional
+Maintainer: Martin Günther <martin.guenther@dfki.de>
+Build-Depends: debhelper (>= 9.0.0), ros-lyrical-ament-cmake, ros-lyrical-ros-workspace
+Homepage: http://ros.org/wiki/phidgets_drivers
+Standards-Version: 3.9.2
+
+Package: ros-lyrical-phidgets-drivers
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-lyrical-libphidget22, ros-lyrical-phidgets-accelerometer, ros-lyrical-phidgets-analog-inputs, ros-lyrical-phidgets-api, ros-lyrical-phidgets-digital-inputs, ros-lyrical-phidgets-digital-outputs, ros-lyrical-phidgets-gyroscope, ros-lyrical-phidgets-high-speed-encoder, ros-lyrical-phidgets-ik, ros-lyrical-phidgets-magnetometer, ros-lyrical-phidgets-motors, ros-lyrical-phidgets-msgs, ros-lyrical-phidgets-spatial, ros-lyrical-phidgets-temperature, ros-lyrical-ros-workspace
+Description: API and ROS drivers for Phidgets devices
